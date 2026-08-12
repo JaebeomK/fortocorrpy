@@ -8,9 +8,19 @@ acquisition time in UTC, and the outputs are full per-pixel angle rasters.
 
 Implementation
 --------------
-The solar position follows a compact astronomical algorithm (Meeus,
-*Astronomical Algorithms*) written in NumPy; ``pyproj`` is used only for the
-projected-to-geographic coordinate transform.
+The Sun's ecliptic coordinates follow the low-precision formulae of The
+Astronomical Almanac, stated to 0.01 degree through 2050 (Michalsky 1988,
+Solar Energy 40, 227-235). Greenwich mean sidereal time uses the equivalent
+degree-based form of Meeus, *Astronomical Algorithms*, eq. 12.4. Both are
+written in NumPy; ``pyproj`` is used only for the projected-to-geographic
+coordinate transform.
+
+Angles are evaluated at every pixel centre. Over a large footprint the solar
+zenith varies across the scene by one to a few degrees, so a per-pixel
+evaluation keeps the downstream ``cos i`` from being scene-averaged.
+
+The longitude and latitude arrays are needed only to evaluate the angles and
+are released once the angle rasters are formed.
 
 Angles are evaluated at every pixel centre. Over a large footprint the solar
 zenith varies across the scene by one to a few degrees, so a per-pixel
