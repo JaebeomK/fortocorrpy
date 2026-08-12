@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "fortocorrpy: Topographic correction of optical satellite imagery over rugged terrain"
+abstract: >-
+  fortocorrpy performs topographic correction of optical surface-reflectance
+  imagery over rugged terrain. It implements six correction
+  methods (cosine, C-correction, SCS, SCS+C, statistical-empirical, and
+  empirical rotation) within a single interface, with forest masking from an
+  NDVI raster or a land-cover raster and four-aspect regression balancing,
+  and optionally reports reflectance-level evaluation metrics for each method
+  in the same call. Correction is driven by the image grid geometry, a DEM,
+  and the acquisition time; images on a common pixel lattice can be corrected
+  in a single call, with the terrain data computed once and a shared forest
+  source reused across them. Built on NumPy, rasterio, and pyproj.
+type: software
+version: 0.1.0
+date-released: "2026-08-12"
+license: MIT
+repository-code: "https://github.com/JaebeomK/fortocorrpy"
+authors:
+  - family-names: Kim
+    given-names: Jaebeom
+    affiliation: "Kangwon National University"
+  - family-names: Moon
+    given-names: Minkyu
+    affiliation: "Kangwon National University"
+keywords:
+  - topographic correction
+  - topographic normalization
+  - remote sensing
+  - satellite imagery
+  - rugged terrain
+  - reflectance
+  - SCS+C
+  - illumination
+  - forest

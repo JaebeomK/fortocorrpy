@@ -1,0 +1,76 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fortocorrpy"
+version = "0.1.0"
+description = "Topographic correction of optical satellite imagery over rugged terrain, with multiple methods and integrated reflectance-level evaluation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Jaebeom Kim" },
+    { name = "Minkyu Moon" },
+]
+keywords = [
+    "topographic correction",
+    "remote sensing",
+    "satellite imagery",
+    "rugged terrain",
+    "reflectance",
+    "SCS+C",
+    "illumination",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+# Runtime dependencies are intentionally left without version floors.
+# Versions used for development and verification are documented in README.md.
+dependencies = [
+    "numpy",
+    "rasterio",
+    "pyproj",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+example = ["matplotlib"]
+
+[project.urls]
+Homepage = "https://github.com/JaebeomK/fortocorrpy"
+Repository = "https://github.com/JaebeomK/fortocorrpy"
+Issues = "https://github.com/JaebeomK/fortocorrpy/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fortocorrpy"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/fortocorrpy",
+    "DESIGN_SPEC.md",
+    "README.md",
+    "LICENSE",
+    "CITATION.cff",
+    "docs",
+    "tests",
+    "EXAMPLE",
+]
+exclude = [
+    "EXAMPLE/output",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
