@@ -210,6 +210,35 @@ The output carries the CRS and transform of `result.grid`, the reference grid
 the correction ran on, so every result of a call overlays the others exactly;
 `band_indices` labels each band with its position in the input stack.
 
+A bulk result
+
+A result carries no path of its own. What ties it to an image is the order: the list, and the generator under stream=True, come back in the order the images went in, so pairing the two with zip names the outputs.
+
+python
+from pathlib import Path
+from fortocorrpy.io import write_geotiff
+
+images = ["0621.tif", "0708.tif", "0724.tif"]
+results = correct_image(images, times, "dem.tif", "ndvi.tif", config)
+
+for path, result in zip(images, results):
+    stem = Path(path).stem
+
+    if result.error:                       # unreadable file, wrong lattice
+        print(stem, "failed:", result.error)
+        continue
+    if result.mask_result.skipped:         # sample too thin in one quadrant
+        print(stem, "skipped:", result.mask_result.quadrant_counts)
+        continue
+
+    for method, arr in result.corrected.items():
+        write_geotiff(f"corrected/{stem}_{method}.tif", arr, result.grid,
+                      band_indices=result.band_indices)
+
+The two guards come first because corrected is None in both cases. They are not the same outcome: a skipped image met no correction condition and reports its quadrant counts, while a failed one never got that far and reports error.
+
+Several methods in one call give one file per method per image, as the inner loop shows. Every file of the call sits on the same grid, so the whole set stacks directly.
+
 ## The example script
 
 `EXAMPLE/example.py` runs the whole sequence on the data in `EXAMPLE/data/`
