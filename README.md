@@ -17,19 +17,19 @@ satellite or product.
 
 ## Installation
 
-Not on PyPI. Get the source from
-[github.com/JaebeomK/fortocorrpy](https://github.com/JaebeomK/fortocorrpy)
-and install from the source directory:
-
 ```bash
-cd fortocorrpy
-pip install .
+pip install fortocorrpy
 ```
 
-For development, install in editable mode so source edits take effect without
+For development, get the source from
+[github.com/KNU-GEL/fortocorrpy](https://github.com/KNU-GEL/fortocorrpy)
+(also at [github.com/JaebeomK/fortocorrpy](https://github.com/JaebeomK/fortocorrpy))
+and install it in editable mode so source edits take effect without
 reinstalling:
 
 ```bash
+git clone https://github.com/KNU-GEL/fortocorrpy.git
+cd fortocorrpy
 pip install -e .
 ```
 
