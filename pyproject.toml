@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fortocorrpy"
-version = "0.1.0"
+version = "1.0.0"
 description = "Topographic correction of optical satellite imagery over rugged terrain, with multiple methods and integrated reflectance-level evaluation."
 readme = "README.md"
 requires-python = ">=3.9"
