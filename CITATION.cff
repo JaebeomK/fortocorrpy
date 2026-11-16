@@ -13,8 +13,8 @@ abstract: >-
   in a single call, with the terrain data computed once and a shared forest
   source reused across them. Built on NumPy, rasterio, and pyproj.
 type: software
-version: 0.1.0
-date-released: "2026-08-12"
+version: 1.0.0
+date-released: "2026-11-15"
 license: MIT
 repository-code: "https://github.com/JaebeomK/fortocorrpy"
 authors:
