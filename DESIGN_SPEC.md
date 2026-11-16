@@ -1,6 +1,6 @@
 # fortocorrpy Design Specification
 
-Version 0.1.0. Requires Python 3.9 or later, with numpy, rasterio and pyproj.
+Version 1.0.0. Requires Python 3.9 or later, with numpy, rasterio and pyproj.
 
 The as-built design. Usage is in `docs/usage.md`, the background to the formulas
 in `docs/methods.md`.
