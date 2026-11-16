@@ -50,7 +50,7 @@ are not a batch: call ``correct_image`` once per lattice.
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 # High-level entry point and configuration (the common API).
 from .config import (
