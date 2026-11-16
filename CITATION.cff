@@ -34,3 +34,19 @@ keywords:
   - SCS+C
   - illumination
   - forest
+preferred-citation:
+  type: article
+  title: "fortocorrpy: A Sensor-Independent Python Package for Multi-Method Topographic Correction of Optical Satellite Imagery"
+  authors:
+    - family-names: Kim
+      given-names: Jaebeom
+    - family-names: Cho
+      given-names: Nanghyen
+    - family-names: Moon
+      given-names: Minkyu
+  journal: "Remote Sensing"
+  year: 2026
+  volume: 18
+  issue: 22
+  start: 3922
+  doi: "10.3390/rs18223922"
