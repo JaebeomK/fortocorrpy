@@ -52,6 +52,7 @@ example = ["matplotlib"]
 Homepage = "https://github.com/JaebeomK/fortocorrpy"
 Repository = "https://github.com/JaebeomK/fortocorrpy"
 Issues = "https://github.com/JaebeomK/fortocorrpy/issues"
+Paper = "https://doi.org/10.3390/rs18223922"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/fortocorrpy"]
